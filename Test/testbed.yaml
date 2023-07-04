@@ -1,0 +1,40 @@
+devices:
+    dist-rtr01:
+        type: 'router'
+        os: 'iosxe'
+        platform: asr1k
+        alias: 'router1'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.10.20.175"
+    dist-rtr02:
+        type: 'router'
+        os: 'iosxe'
+        platform: asr1k
+        alias: 'router2'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.10.20.176"
+    dist-sw01:
+        type: 'router'
+        os: 'nxos'
+        platform: n9kv
+        alias: 'switch'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "10.10.20.177"

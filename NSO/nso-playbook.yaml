@@ -1,0 +1,22 @@
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: CREATE DEVICE IN NSO
+      cisco.nso.nso_config:
+        url: https://127.0.0.1:8080/jsonrpc
+        username: admin
+        password: admin
+        data:
+          tailf-ncs:devices:
+            device:
+            - address: 192.168.4.1
+              description: CONFIGURED BY ANSIBLE!
+              name: myrouter1
+              authgroup: "mygroup"
+              device-type:
+                cli:
+                  ned-id: "cisco-ios-cli-6.69"
+              port: "22"
+              state:
+                admin-state: "unlocked"
