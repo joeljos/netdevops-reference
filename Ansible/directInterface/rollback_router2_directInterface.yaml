@@ -1,0 +1,36 @@
+- name: rollback - Configure direct interface parameters
+  hosts: router2
+
+  tasks:
+
+  - name: rollback - bring interface GigabitEthernet1 to admin UP state
+    cisco.ios.ios_interfaces:
+      config:
+      - name: GigabitEthernet1
+        description: Configured and Replaced by Ansible cisco.ios.ios_interfaces
+        enabled: yes
+      state: deleted
+
+  - name: rollback - configure the ipv4 address of GigabitEthernet1 in router1
+    cisco.ios.ios_l3_interfaces:
+      config:
+      - name: GigabitEthernet1
+        ipv4:
+        - address: 192.168.0.2/24
+      state: deleted
+
+  - name: rollback - bring interface GigabitEthernet3 to admin UP state
+    cisco.ios.ios_interfaces:
+      config:
+      - name: GigabitEthernet3
+        description: Configured and Replaced by Ansible cisco.ios.ios_interfaces
+        enabled: yes
+      state: deleted
+
+  - name: rollback - configure the ipv4 address of GigabitEthernet3 in router2
+    cisco.ios.ios_l3_interfaces:
+      config:
+      - name: GigabitEthernet3
+        ipv4:
+        - address: 192.168.2.1/24
+      state: deleted

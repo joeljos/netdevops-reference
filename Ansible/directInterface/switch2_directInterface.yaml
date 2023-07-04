@@ -1,0 +1,23 @@
+- name: Configure direct interface parameters in switch2
+  hosts: switch2
+
+  tasks:
+
+  - name: bring interface Ethernet1/1 to admin UP state in switch2
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: Ethernet1/1
+        description: Configured and Replaced by Ansible cisco.nxos.nxos_interfaces
+        enabled: yes
+        mode: layer3
+      state: replaced
+
+  - name: configure the ipv4 address of Ethernet1/1 in switch2
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+      - name: Ethernet1/1
+        ipv4:
+        - address: 192.168.4.2/24
+      state: replaced
+
+

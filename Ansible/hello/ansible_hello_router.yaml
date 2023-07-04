@@ -1,0 +1,10 @@
+- name: Network Getting Started First Playbook for routers
+  gather_facts: false
+  hosts: router*
+  tasks:
+    - name: Gather all ios facts
+      cisco.ios.ios_facts:
+    - name: Display the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+    

@@ -1,0 +1,990 @@
+lab:
+  description: ''
+  notes: ''
+  timestamp: 1647001770.3932366
+  title: Demo
+  version: 0.0.4
+nodes:
+  - id: n1
+    label: router1
+    node_definition: csr1000v
+    x: -1050
+    y: -200
+    configuration: "Building configuration...\n\nCurrent configuration : 6570 bytes\n\
+      !\n! Last configuration change at 11:21:09 UTC Mon Mar 21 2022\n!\nversion 17.3\n\
+      service timestamps debug datetime msec\nservice timestamps log datetime msec\n\
+      service call-home\nplatform qfp utilization monitor load 80\nplatform punt-keepalive\
+      \ disable-kernel-core\nplatform console serial\n!\nhostname router1\n!\nboot-start-marker\n\
+      boot-end-marker\n!\n!\nno logging console\nenable password cisco\n!\nno aaa\
+      \ new-model\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name virl.info\n\
+      !\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n\
+      !\n!\n!\n!\n!\n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n\
+      !\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n\
+      \ revocation-check crl\n!\ncrypto pki trustpoint TP-self-signed-1996134036\n\
+      \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-1996134036\n\
+      \ revocation-check none\n rsakeypair TP-self-signed-1996134036\n!\n!\ncrypto\
+      \ pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209\
+      \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355\
+      \ 040A1305 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73\
+      \ 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338\
+      \ 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030\
+      \ 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130\
+      \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
+      \ A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147\
+      \ C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239\
+      \ C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9\
+      \ 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD\
+      \ C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7\
+      \ 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62\
+      \ EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD\
+      \ 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1\
+      \ 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13\
+      \ 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17\
+      \ 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24\
+      \ D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B\
+      \ 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E\
+      \ 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700\
+      \ 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6\
+      \ 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F\
+      \ 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA\
+      \ EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049\
+      \ 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \t\
+      quit\ncrypto pki certificate chain TP-self-signed-1996134036\n certificate self-signed\
+      \ 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030\n\
+      \  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+      \  69666963 6174652D 31393936 31333430 3336301E 170D3232 30333231 30373333\n\
+      \  34305A17 0D333230 33323030 37333334 305A3031 312F302D 06035504 03132649\n\
+      \  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 39393631\n\
+      \  33343033 36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201\n\
+      \  0A028201 01009B3D 3A8A75DF BA3ED279 BC75037A D76B1674 EAF915E9 F2192293\n\
+      \  886DD8B6 255EBB02 6EE7DDE1 8E45569E 6D5D02A1 00BBF1FC 5BD6E18A F4389C33\n\
+      \  59FB102E 46FBF8B4 81B02DE3 CCD312B6 18BC31FB ECD13EE2 81F6C1B4 6DA0B184\n\
+      \  8D770DFA 990A6C08 453A9F54 CA901A57 695B8751 3F76103A 9C9F104C CA2A0B39\n\
+      \  57A836C5 495FA2C4 E4B23441 7C296B35 3F16794B DCF98F45 5C63AB90 8A85E2EC\n\
+      \  833D2DA3 28B233DB E45C08FF 11982D52 1696C310 787E3D22 242E9636 B600416D\n\
+      \  26EB7C5B 2BA44806 109591FA 0964B0D6 0AF4D228 D24238D2 D1B80E3B 8E8FE053\n\
+      \  26096A4D B1C97B77 63B26E4E 22F11DB0 A595814E F1588AD7 A0C5DD21 DE43AE90\n\
+      \  0688C40A B4050203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF\n\
+      \  301F0603 551D2304 18301680 14E326AD 9823E9DB 22DEAE42 B70472E0 893FA3CA\n\
+      \  2D301D06 03551D0E 04160414 E326AD98 23E9DB22 DEAE42B7 0472E089 3FA3CA2D\n\
+      \  300D0609 2A864886 F70D0101 05050003 82010100 91CFB8AB F7F35FFC A6355CF6\n\
+      \  EA812F19 61B8CB5F 115A6F51 5DBF905E 1CDC732C 32DB4933 5338B503 26DE5515\n\
+      \  81A6875F 559AE35C 31D0D986 1AC2E2FE EC7DB899 6E04E648 88FE541A 38D8F27E\n\
+      \  49B23BB0 06A1ACF6 43C3FB68 0674E497 DD9CB01F 13AFF79F 5E5B8D4F 5F6637C5\n\
+      \  713E00C1 E1C62DF0 48D0EC57 196AE3C9 5294FE8C 8BA2381F FC454774 AEDA8243\n\
+      \  55473EAA 158FF5B8 96D0DF56 2052254E DC3594C5 0BB4D89F BED22A02 96FD2B4F\n\
+      \  43B962D1 C032C107 EB250CF1 B5F2DBD4 B85A9A82 C52D9B01 9CBA6901 3C7E0C42\n\
+      \  834EE085 83B18E98 3225F92C DF618EB2 1D6A5768 46322498 B6E68BE5 5676F51E\n\
+      \  0BE1F110 59ACD883 4BEED17A 577E2F80 FCEF8E9C\n  \tquit\n!\nlicense udi pid\
+      \ CSR1000V sn 9W1ZKRAHQFW\ndiagnostic bootup level minimal\nmemory free low-watermark\
+      \ processor 71507\n!\n!\nspanning-tree extend system-id\n!\nusername cisco privilege\
+      \ 15 secret 9 $9$vsue/O9aSnqX4U$hIKGLRFA/gCzVGZJ9Pvb9UEIuarmA4Jb0WH1oOsuOTg\n\
+      !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+      !\n!\n!\n!\n!\ninterface Loopback0\n description to\n no ip address\n shutdown\n\
+      !\ninterface GigabitEthernet1\n description to GigabitEthernet1.csr1000v-0\n\
+      \ ip address dhcp\n negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface\
+      \ GigabitEthernet2\n description to GigabitEthernet1.csr1000v-2\n no ip address\n\
+      \ negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet3\n\
+      \ description to GigabitEthernet1.csr1000v-3\n no ip address\n negotiation auto\n\
+      \ no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet4\n description\
+      \ to GigabitEthernet1.csr1000v-4\n no ip address\n negotiation auto\n no mop\
+      \ enabled\n no mop sysid\n!\ninterface GigabitEthernet5\n description to port3.unmanaged-switch-0\n\
+      \ ip address dhcp\n negotiation auto\n no mop enabled\n no mop sysid\n!\nip\
+      \ forward-protocol nd\nno ip http server\nip http secure-server\n!\nip ssh server\
+      \ algorithm authentication password\n!\n!\n!\n!\n!\n!\n!\ncontrol-plane\n!\n\
+      !\n!\n!\n!\n!\nline con 0\n exec-timeout 0 0\n password cisco\n stopbits 1\n\
+      line vty 0 4\n exec-timeout 720 0\n password cisco\n login local\n transport\
+      \ input telnet ssh\n!\ncall-home\n ! If contact email address in call-home is\
+      \ configured as sch-smart-licensing@cisco.com\n ! the email address configured\
+      \ in Cisco Smart License Portal will be used as contact email address to send\
+      \ SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n profile\
+      \ \"CiscoTAC-1\"\n  active\n  destination transport-method http\n!\n!\n!\n!\n\
+      !\nend"
+    image_definition: csr1000v-170302
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet1
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet2
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet3
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet4
+        type: physical
+      - id: i5
+        slot: 4
+        label: GigabitEthernet5
+        type: physical
+  - id: n2
+    label: ubuntu-0
+    node_definition: ubuntu
+    x: -1600
+    y: -50
+    configuration: |-
+      #cloud-config
+      hostname: ubuntu-0
+      manage_etc_hosts: True
+      system_info:
+        default_user:
+          name: cisco
+      password: cisco
+      chpasswd: { expire: False }
+      ssh_pwauth: True
+      ssh_authorized_keys:
+         - your-ssh-pubkey-line-goes-here
+    image_definition: ubuntu-20-04-20210224
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: ens3
+        type: physical
+  - id: n3
+    label: router2
+    node_definition: csr1000v
+    x: -900
+    y: -200
+    configuration: "Building configuration...\n\nCurrent configuration : 6398 bytes\n\
+      !\n! Last configuration change at 11:21:09 UTC Mon Mar 21 2022\n!\nversion 17.3\n\
+      service timestamps debug datetime msec\nservice timestamps log datetime msec\n\
+      service call-home\nplatform qfp utilization monitor load 80\nplatform punt-keepalive\
+      \ disable-kernel-core\nplatform console serial\n!\nhostname router2\n!\nboot-start-marker\n\
+      boot-end-marker\n!\n!\nno logging console\nenable password cisco\n!\nno aaa\
+      \ new-model\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name virl.info\n\
+      !\n!\n!\nlogin on-success log\n!\n!\n!\n!\n!\n!\n!\nsubscriber templating\n\
+      !\n!\n!\n!\n!\n!\nmultilink bundle-name authenticated\n!\n!\n!\n!\n!\n!\n!\n\
+      !\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n\
+      \ revocation-check crl\n!\ncrypto pki trustpoint TP-self-signed-2204462437\n\
+      \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-2204462437\n\
+      \ revocation-check none\n rsakeypair TP-self-signed-2204462437\n!\n!\ncrypto\
+      \ pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209\
+      \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355\
+      \ 040A1305 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73\
+      \ 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338\
+      \ 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030\
+      \ 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130\
+      \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
+      \ A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147\
+      \ C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239\
+      \ C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9\
+      \ 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD\
+      \ C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7\
+      \ 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62\
+      \ EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD\
+      \ 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1\
+      \ 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13\
+      \ 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17\
+      \ 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24\
+      \ D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B\
+      \ 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E\
+      \ 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700\
+      \ 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6\
+      \ 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F\
+      \ 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA\
+      \ EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049\
+      \ 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \t\
+      quit\ncrypto pki certificate chain TP-self-signed-2204462437\n certificate self-signed\
+      \ 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030\n\
+      \  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+      \  69666963 6174652D 32323034 34363234 3337301E 170D3232 30333231 30373333\n\
+      \  34335A17 0D333230 33323030 37333334 335A3031 312F302D 06035504 03132649\n\
+      \  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 32303434\n\
+      \  36323433 37308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201\n\
+      \  0A028201 0100B68C C83AEA5B 7E6C7F98 1C503144 34CD4217 1338F32B D12297B7\n\
+      \  5F726686 EE4A0A02 413B35D1 B69F602F 8429F4C7 3BB81DD0 4DCA6596 8F0A0CE8\n\
+      \  90CB2450 581372FF 77A1975B ECB292A0 6A186B3D B0E39C8E A986722F 539EE60C\n\
+      \  3B4F8A6B B43CE64E 57C95042 20879CB2 ECE02CD6 9D19F47E F6E44BDF EC601652\n\
+      \  0C243038 BE0D9A60 BAB422F5 3B86374E 42660E21 293CD444 E919A21A 53AFEC33\n\
+      \  70287569 FD7A263D 947D63C7 24F4CAC6 177C4877 B380894C 5381D17C BA1BE3E6\n\
+      \  B7A29B1E 7071E392 E3209BC4 7DD9195A 05DE003D 4F493CDE 9F503553 88C5AF1F\n\
+      \  77E6EAD1 FC84956F 8A79F34C 5474857C A2931B88 ACB5AF5D B07B0A8A 87439961\n\
+      \  2DBA79D7 E17D0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF\n\
+      \  301F0603 551D2304 18301680 14D760CF 05B23E29 B97C6EDC 536B7684 BA44762E\n\
+      \  D6301D06 03551D0E 04160414 D760CF05 B23E29B9 7C6EDC53 6B7684BA 44762ED6\n\
+      \  300D0609 2A864886 F70D0101 05050003 82010100 4431B217 D12B5D10 65274ACB\n\
+      \  0EA29E76 565978A9 D5181B00 A694645E D14F4658 775D02A8 E6EA9A79 3CB932FE\n\
+      \  C950AA55 AAEB2411 26380809 5A0E8112 36958B8A 134605D1 0A5D1021 F1D282B4\n\
+      \  AB5134BB AB85F854 37CC9838 11A91D01 6F782558 8AFB8A2D 3816B079 EB18EC6F\n\
+      \  9E60F7E1 A8EF948D 9690CEBE A22E75BF 35513D8E 641388FF DF70138A 6A10AD89\n\
+      \  1266BFEF BDF61C4E B1D7D2DF B339FA14 9277A6FA 2AEDC087 11FBFB98 B4806908\n\
+      \  E47A0D48 71AEE472 319E6D97 2A612140 F8AE8B5C 3ED1B93D 7C184C95 C6B6923B\n\
+      \  3C9FBDC9 3393F8B5 75B835B8 351DBF93 F2DE7AEE BC96CCA0 72854297 156E117A\n\
+      \  E3F2FE1E 9926F089 015F7371 2625A399 8749AE35\n  \tquit\n!\nlicense udi pid\
+      \ CSR1000V sn 91BJLHN5BVQ\ndiagnostic bootup level minimal\nmemory free low-watermark\
+      \ processor 71507\n!\n!\nspanning-tree extend system-id\n!\nusername cisco privilege\
+      \ 15 secret 9 $9$sByqXNq6K27OjU$tMcrhj9uNno5APwbLG9jEW3cGF.XXd1kyFjEcAF1XiM\n\
+      !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+      !\n!\n!\n!\n!\ninterface Loopback0\n description to\n no ip address\n shutdown\n\
+      !\ninterface GigabitEthernet1\n description to GigabitEthernet2.csr1000v-1\n\
+      \ no ip address\n negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface\
+      \ GigabitEthernet2\n description to port5.unmanaged-switch-0\n ip address dhcp\n\
+      \ negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet3\n\
+      \ description to\n no ip address\n shutdown\n negotiation auto\n no mop enabled\n\
+      \ no mop sysid\n!\ninterface GigabitEthernet4\n description to\n no ip address\n\
+      \ shutdown\n negotiation auto\n no mop enabled\n no mop sysid\n!\nip forward-protocol\
+      \ nd\nno ip http server\nip http secure-server\n!\nip ssh server algorithm authentication\
+      \ password\n!\n!\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\n!\n!\n!\nline con 0\n\
+      \ exec-timeout 0 0\n password cisco\n stopbits 1\nline vty 0 4\n exec-timeout\
+      \ 720 0\n password cisco\n login local\n transport input telnet ssh\n!\ncall-home\n\
+      \ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\n\
+      \ ! the email address configured in Cisco Smart License Portal will be used\
+      \ as contact email address to send SCH notifications.\n contact-email-addr sch-smart-licensing@cisco.com\n\
+      \ profile \"CiscoTAC-1\"\n  active\n  destination transport-method http\n!\n\
+      !\n!\n!\n!\nend"
+    image_definition: csr1000v-170302
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: GigabitEthernet1
+        type: physical
+      - id: i2
+        slot: 1
+        label: GigabitEthernet2
+        type: physical
+      - id: i3
+        slot: 2
+        label: GigabitEthernet3
+        type: physical
+      - id: i4
+        slot: 3
+        label: GigabitEthernet4
+        type: physical
+  - id: n5
+    label: unmanaged-switch-0
+    node_definition: unmanaged_switch
+    x: -1450
+    y: 100
+    configuration: ''
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: port0
+        type: physical
+      - id: i1
+        slot: 1
+        label: port1
+        type: physical
+      - id: i2
+        slot: 2
+        label: port2
+        type: physical
+      - id: i3
+        slot: 3
+        label: port3
+        type: physical
+      - id: i4
+        slot: 4
+        label: port4
+        type: physical
+      - id: i5
+        slot: 5
+        label: port5
+        type: physical
+      - id: i6
+        slot: 6
+        label: port6
+        type: physical
+      - id: i7
+        slot: 7
+        label: port7
+        type: physical
+  - id: n4
+    label: ext-conn-0
+    node_definition: external_connector
+    x: -1500
+    y: -200
+    configuration: virbr0
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: port
+        type: physical
+  - id: n6
+    label: switch1
+    node_definition: nxosv9000
+    x: -1000
+    y: -50
+    configuration: |2-
+
+      !Command: show running-config
+      !Running configuration last done at: Mon Mar 21 11:20:27 2022
+      !Time: Mon Mar 21 11:20:30 2022
+
+      version 9.3(6) Bios:version
+      hostname switch1
+      vdc switch1 id 1
+        limit-resource vlan minimum 16 maximum 4094
+        limit-resource vrf minimum 2 maximum 4096
+        limit-resource port-channel minimum 0 maximum 511
+        limit-resource u4route-mem minimum 248 maximum 248
+        limit-resource u6route-mem minimum 96 maximum 96
+        limit-resource m4route-mem minimum 58 maximum 58
+        limit-resource m6route-mem minimum 8 maximum 8
+
+      no password strength-check
+      username admin password 5 $5$MEKLLA$GrrzBsD9388n7gQPDz3XDRoAkxP9ANRic77mE0Y/ag.  role network-admin
+      username cisco password 5 $5$ACGOPC$G4eEcCFXWIk2l61WMYaawU7GDZrXvpDB9Us6LYMPu80  role network-admin
+      username cisco passphrase  lifetime 99999 warntime 14 gracetime 3
+      ip domain-lookup
+      ip name-server 192.168.255.1 use-vrf management
+      snmp-server user admin network-admin auth md5 0x21e57fd93366d78d647552159f9ef91c priv 0x21e57fd93366d78d647552159f9ef91c localizedkey
+      snmp-server user cisco network-admin auth md5 0x21e57fd93366d78d647552159f9ef91c priv 0x21e57fd93366d78d647552159f9ef91c localizedkey
+      rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+      rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+      rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+      rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+      rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+
+      vlan 1
+
+      vrf context management
+        ip route 0.0.0.0/0 192.168.255.1
+
+      interface Ethernet1/1
+
+      interface Ethernet1/2
+
+      interface Ethernet1/3
+
+      interface Ethernet1/4
+
+      interface Ethernet1/5
+
+      interface Ethernet1/6
+
+      interface Ethernet1/7
+
+      interface Ethernet1/8
+
+      interface Ethernet1/9
+
+      interface Ethernet1/10
+
+      interface Ethernet1/11
+
+      interface Ethernet1/12
+
+      interface Ethernet1/13
+
+      interface Ethernet1/14
+
+      interface Ethernet1/15
+
+      interface Ethernet1/16
+
+      interface Ethernet1/17
+
+      interface Ethernet1/18
+
+      interface Ethernet1/19
+
+      interface Ethernet1/20
+
+      interface Ethernet1/21
+
+      interface Ethernet1/22
+
+      interface Ethernet1/23
+
+      interface Ethernet1/24
+
+      interface Ethernet1/25
+
+      interface Ethernet1/26
+
+      interface Ethernet1/27
+
+      interface Ethernet1/28
+
+      interface Ethernet1/29
+
+      interface Ethernet1/30
+
+      interface Ethernet1/31
+
+      interface Ethernet1/32
+
+      interface Ethernet1/33
+
+      interface Ethernet1/34
+
+      interface Ethernet1/35
+
+      interface Ethernet1/36
+
+      interface Ethernet1/37
+
+      interface Ethernet1/38
+
+      interface Ethernet1/39
+
+      interface Ethernet1/40
+
+      interface Ethernet1/41
+
+      interface Ethernet1/42
+
+      interface Ethernet1/43
+
+      interface Ethernet1/44
+
+      interface Ethernet1/45
+
+      interface Ethernet1/46
+
+      interface Ethernet1/47
+
+      interface Ethernet1/48
+
+      interface Ethernet1/49
+
+      interface Ethernet1/50
+
+      interface Ethernet1/51
+
+      interface Ethernet1/52
+
+      interface Ethernet1/53
+
+      interface Ethernet1/54
+
+      interface Ethernet1/55
+
+      interface Ethernet1/56
+
+      interface Ethernet1/57
+
+      interface Ethernet1/58
+
+      interface Ethernet1/59
+
+      interface Ethernet1/60
+
+      interface Ethernet1/61
+
+      interface Ethernet1/62
+
+      interface Ethernet1/63
+
+      interface Ethernet1/64
+
+      interface mgmt0
+        ip address dhcp
+        vrf member management
+      icam monitor scale
+
+      line console
+        exec-timeout 0
+      line vty
+        exec-timeout 0
+      boot nxos bootflash:/nxos.9.3.6.bin sup-1
+
+      no logging console
+    image_definition: nxosv9500-9-3-6
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: mgmt0
+        type: physical
+      - id: i2
+        slot: 1
+        label: Ethernet1/1
+        type: physical
+      - id: i3
+        slot: 2
+        label: Ethernet1/2
+        type: physical
+      - id: i4
+        slot: 3
+        label: Ethernet1/3
+        type: physical
+  - id: n7
+    label: switch2
+    node_definition: nxosv9000
+    x: -650
+    y: 0
+    configuration: |2-
+
+      !Command: show running-config
+      !Running configuration last done at: Mon Mar 21 11:20:21 2022
+      !Time: Mon Mar 21 11:20:24 2022
+
+      version 9.3(6) Bios:version
+      hostname switch2
+      vdc switch2 id 1
+        limit-resource vlan minimum 16 maximum 4094
+        limit-resource vrf minimum 2 maximum 4096
+        limit-resource port-channel minimum 0 maximum 511
+        limit-resource u4route-mem minimum 248 maximum 248
+        limit-resource u6route-mem minimum 96 maximum 96
+        limit-resource m4route-mem minimum 58 maximum 58
+        limit-resource m6route-mem minimum 8 maximum 8
+
+      no password strength-check
+      username admin password 5 $5$OPLAHK$BUjBT/w5TRLLfPV2Rd.ztYO/V3AqJnV2a02jCZNSH23  role network-admin
+      username cisco password 5 $5$KAIHNL$PKrfGKWKyXS9.2c.DksxTrLbDcb2rjul1QxhuAB7wp5  role network-admin
+      username cisco passphrase  lifetime 99999 warntime 14 gracetime 3
+      ip domain-lookup
+      ip name-server 192.168.255.1 use-vrf management
+      snmp-server user admin network-admin auth md5 0x47fe6176798d8e68cdfe26ad5f6edb63 priv 0x47fe6176798d8e68cdfe26ad5f6edb63 localizedkey
+      snmp-server user cisco network-admin auth md5 0x47fe6176798d8e68cdfe26ad5f6edb63 priv 0x47fe6176798d8e68cdfe26ad5f6edb63 localizedkey
+      rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+      rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+      rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+      rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+      rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+
+      vlan 1
+
+      vrf context management
+        ip route 0.0.0.0/0 192.168.255.1
+
+      interface Ethernet1/1
+
+      interface Ethernet1/2
+
+      interface Ethernet1/3
+
+      interface Ethernet1/4
+
+      interface Ethernet1/5
+
+      interface Ethernet1/6
+
+      interface Ethernet1/7
+
+      interface Ethernet1/8
+
+      interface Ethernet1/9
+
+      interface Ethernet1/10
+
+      interface Ethernet1/11
+
+      interface Ethernet1/12
+
+      interface Ethernet1/13
+
+      interface Ethernet1/14
+
+      interface Ethernet1/15
+
+      interface Ethernet1/16
+
+      interface Ethernet1/17
+
+      interface Ethernet1/18
+
+      interface Ethernet1/19
+
+      interface Ethernet1/20
+
+      interface Ethernet1/21
+
+      interface Ethernet1/22
+
+      interface Ethernet1/23
+
+      interface Ethernet1/24
+
+      interface Ethernet1/25
+
+      interface Ethernet1/26
+
+      interface Ethernet1/27
+
+      interface Ethernet1/28
+
+      interface Ethernet1/29
+
+      interface Ethernet1/30
+
+      interface Ethernet1/31
+
+      interface Ethernet1/32
+
+      interface Ethernet1/33
+
+      interface Ethernet1/34
+
+      interface Ethernet1/35
+
+      interface Ethernet1/36
+
+      interface Ethernet1/37
+
+      interface Ethernet1/38
+
+      interface Ethernet1/39
+
+      interface Ethernet1/40
+
+      interface Ethernet1/41
+
+      interface Ethernet1/42
+
+      interface Ethernet1/43
+
+      interface Ethernet1/44
+
+      interface Ethernet1/45
+
+      interface Ethernet1/46
+
+      interface Ethernet1/47
+
+      interface Ethernet1/48
+
+      interface Ethernet1/49
+
+      interface Ethernet1/50
+
+      interface Ethernet1/51
+
+      interface Ethernet1/52
+
+      interface Ethernet1/53
+
+      interface Ethernet1/54
+
+      interface Ethernet1/55
+
+      interface Ethernet1/56
+
+      interface Ethernet1/57
+
+      interface Ethernet1/58
+
+      interface Ethernet1/59
+
+      interface Ethernet1/60
+
+      interface Ethernet1/61
+
+      interface Ethernet1/62
+
+      interface Ethernet1/63
+
+      interface Ethernet1/64
+
+      interface mgmt0
+        ip address dhcp
+        vrf member management
+      icam monitor scale
+
+      line console
+        exec-timeout 0
+      line vty
+        exec-timeout 0
+      boot nxos bootflash:/nxos.9.3.6.bin sup-1
+
+      no logging console
+    image_definition: nxosv9500-9-3-6
+    tags: []
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        slot: 0
+        label: mgmt0
+        type: physical
+      - id: i2
+        slot: 1
+        label: Ethernet1/1
+        type: physical
+      - id: i3
+        slot: 2
+        label: Ethernet1/2
+        type: physical
+      - id: i4
+        slot: 3
+        label: Ethernet1/3
+        type: physical
+  - id: n0
+    label: asav-0
+    node_definition: asav
+    x: -850
+    y: -50
+    configuration: |-
+      : Saved
+
+      :
+      : Serial Number: 9A3HTC7VNA4
+      : Hardware:   ASAv, 2048 MB RAM, CPU Pentium II 2700 MHz
+      :
+      ASA Version 9.15(1)1
+      !
+      hostname ciscoasa
+      enable password ***** pbkdf2
+      service-module 0 keepalive-timeout 4
+      service-module 0 keepalive-counter 6
+      names
+      no mac-address auto
+
+      !
+      interface GigabitEthernet0/0
+       shutdown
+       no nameif
+       no security-level
+       no ip address
+      !
+      interface GigabitEthernet0/1
+       shutdown
+       no nameif
+       no security-level
+       no ip address
+      !
+      interface Management0/0
+       management-only
+       nameif mgmt
+       security-level 100
+       ip address dhcp
+      !
+      ftp mode passive
+      pager lines 23
+      mtu mgmt 1500
+      no failover
+      no failover wait-disable
+      icmp unreachable rate-limit 1 burst-size 1
+      no asdm history enable
+      arp timeout 14400
+      no arp permit-nonconnected
+      arp rate-limit 8192
+      timeout xlate 3:00:00
+      timeout pat-xlate 0:00:30
+      timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 sctp 0:02:00 icmp 0:00:02
+      timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+      timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+      timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+      timeout tcp-proxy-reassembly 0:01:00
+      timeout floating-conn 0:00:00
+      timeout conn-holddown 0:00:15
+      timeout igp stale-route 0:01:10
+      user-identity default-domain LOCAL
+      aaa authentication ssh console LOCAL
+      aaa authentication login-history
+      no snmp-server location
+      no snmp-server contact
+      crypto ipsec security-association pmtu-aging infinite
+      crypto ca trustpoint _SmartCallHome_ServerCA
+       no validation-usage
+       crl configure
+      crypto ca trustpool policy
+       auto-import
+      crypto ca certificate chain _SmartCallHome_ServerCA
+       certificate ca 0509
+          308205b7 3082039f a0030201 02020205 09300d06 092a8648 86f70d01 01050500
+          3045310b 30090603 55040613 02424d31 19301706 0355040a 13105175 6f566164
+          6973204c 696d6974 6564311b 30190603 55040313 1251756f 56616469 7320526f
+          6f742043 41203230 1e170d30 36313132 34313832 3730305a 170d3331 31313234
+          31383233 33335a30 45310b30 09060355 04061302 424d3119 30170603 55040a13
+          1051756f 56616469 73204c69 6d697465 64311b30 19060355 04031312 51756f56
+          61646973 20526f6f 74204341 20323082 0222300d 06092a86 4886f70d 01010105
+          00038202 0f003082 020a0282 0201009a 18ca4b94 0d002daf 03298af0 0f81c8ae
+          4c19851d 089fab29 4485f32f 81ad321e 9046bfa3 86261a1e fe7e1c18 3a5c9c60
+          172a3a74 8333307d 615411cb edabe0e6 d2a27ef5 6b6f18b7 0a0b2dfd e93eef0a
+          c6b310e9 dcc24617 f85dfda4 daff9e49 5a9ce633 e62496f7 3fba5b2b 1c7a35c2
+          d667feab 66508b6d 28602bef d760c3c7 93bc8d36 91f37ff8 db1113c4 9c7776c1
+          aeb7026a 817aa945 83e205e6 b956c194 378f4871 6322ec17 6507958a 4bdf8fc6
+          5a0ae5b0 e35f5e6b 11ab0cf9 85eb44e9 f80473f2 e9fe5c98 8cf573af 6bb47ecd
+          d45c022b 4c39e1b2 95952d42 87d7d5b3 9043b76c 13f1dedd f6c4f889 3fd175f5
+          92c391d5 8a88d090 ecdc6dde 89c26571 968b0d03 fd9cbf5b 16ac92db eafe797c
+          adebaff7 16cbdbcd 252be51f fb9a9fe2 51cc3a53 0c48e60e bdc9b476 0652e611
+          13857263 0304e004 362b2019 02e874a7 1fb6c956 66f07525 dc67c10e 616088b3
+          3ed1a8fc a3da1db0 d1b12354 df44766d ed41d8c1 b222b653 1cdf351d dca1772a
+          31e42df5 e5e5dbc8 e0ffe580 d70b63a0 ff33a10f ba2c1515 ea97b3d2 a2b5bef2
+          8c961e1a 8f1d6ca4 6137b986 7333d797 969e237d 82a44c81 e2a1d1ba 675f9507
+          a32711ee 16107bbc 454a4cb2 04d2abef d5fd0c51 ce506a08 31f991da 0c8f645c
+          03c33a8b 203f6e8d 673d3ad6 fe7d5b88 c95efbcc 61dc8b33 77d34432 35096204
+          921610d8 9e2747fb 3b21e3f8 eb1d5b02 03010001 a381b030 81ad300f 0603551d
+          130101ff 04053003 0101ff30 0b060355 1d0f0404 03020106 301d0603 551d0e04
+          1604141a 8462bc48 4c332504 d4eed0f6 03c41946 d1946b30 6e060355 1d230467
+          30658014 1a8462bc 484c3325 04d4eed0 f603c419 46d1946b a149a447 3045310b
+          30090603 55040613 02424d31 19301706 0355040a 13105175 6f566164 6973204c
+          696d6974 6564311b 30190603 55040313 1251756f 56616469 7320526f 6f742043
+          41203282 02050930 0d06092a 864886f7 0d010105 05000382 0201003e 0a164d9f
+          065ba8ae 715d2f05 2f67e613 4583c436 f6f3c026 0c0db547 645df8b4 72c946a5
+          03182755 89787d76 ea963480 1720dce7 83f88dfc 07b8da5f 4d2e67b2 84fdd944
+          fc775081 e67cb4c9 0d0b7253 f8760707 4147960c fbe08226 93558cfe 221f6065
+          7c5fe726 b3f73290 9850d437 7155f692 2178f795 79faf82d 26876656 3077a637
+          78335210 58ae3f61 8ef26ab1 ef187e4a 5963ca8d a256d5a7 2fbc561f cf39c1e2
+          fb0aa815 2c7d4d7a 63c66c97 443cd26f c34a170a f890d257 a21951a5 2d9741da
+          074fa950 da908d94 46e13ef0 94fd1000 38f53be8 40e1b46e 561a20cc 6f588ded
+          2e458fd6 e9933fe7 b12cdf3a d6228cdc 84bb226f d0f8e4c6 39e90488 3cc3baeb
+          557a6d80 9924f56c 01fbf897 b0945beb fdd26ff1 77680d35 6423acb8 55a103d1
+          4d4219dc f8755956 a3f9a849 79f8af0e b911a07c b76aed34 d0b62662 381a870c
+          f8e8fd2e d3907f07 912a1dd6 7e5c8583 99b03808 3fe95ef9 3507e4c9 626e577f
+          a75095f7 bac89be6 8ea201c5 d666bf79 61f33c1c e1b9825c 5da0c3e9 d848bd19
+          a2111419 6eb2861b 683e4837 1a88b75d 965e9cc7 ef276208 e291195c d2f121dd
+          ba174282 97718153 31a99ff6 7d62bf72 e1a3931d cc8a265a 0938d0ce d70d8016
+          b478a53a 874c8d8a a5d54697 f22c10b9 bc5422c0 01506943 9ef4b2ef 6df8ecda
+          f1e3b1ef df918f54 2a0b25c1 2619c452 100565d5 8210eac2 31cd2e
+        quit
+      telnet timeout 5
+      ssh stricthostkeycheck
+      ssh timeout 5
+      ssh version 2
+      ssh key-exchange group dh-group14-sha256
+      ssh 192.168.255.0 255.255.255.0 mgmt
+      console timeout 0
+      console serial
+      threat-detection basic-threat
+      threat-detection statistics access-list
+      no threat-detection statistics tcp-intercept
+      dynamic-access-policy-record DfltAccessPolicy
+      username cisco password ***** pbkdf2
+      !
+      class-map inspection_default
+       match default-inspection-traffic
+      !
+      !
+      policy-map type inspect dns preset_dns_map
+       parameters
+        message-length maximum client auto
+        message-length maximum 512
+        no tcp-inspection
+      policy-map global_policy
+       class inspection_default
+        inspect ip-options
+        inspect netbios
+        inspect rtsp
+        inspect sunrpc
+        inspect tftp
+        inspect dns preset_dns_map
+        inspect ftp
+        inspect h323 h225
+        inspect h323 ras
+        inspect rsh
+        inspect esmtp
+        inspect sqlnet
+        inspect sip
+        inspect skinny
+        inspect snmp
+      policy-map type inspect dns migrated_dns_map_2
+       parameters
+        message-length maximum client auto
+        message-length maximum 512
+        no tcp-inspection
+      policy-map type inspect dns migrated_dns_map_1
+       parameters
+        message-length maximum client auto
+        message-length maximum 512
+        no tcp-inspection
+      !
+      service-policy global_policy global
+      prompt hostname context
+      call-home reporting anonymous prompt 2
+      call-home
+       profile License
+        destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
+        destination transport-method http
+       profile CiscoTAC-1
+        no active
+        destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
+        destination address email callhome@cisco.com
+        destination transport-method http
+        subscribe-to-alert-group diagnostic
+        subscribe-to-alert-group environment
+        subscribe-to-alert-group inventory periodic monthly
+        subscribe-to-alert-group configuration periodic monthly
+        subscribe-to-alert-group telemetry periodic daily
+      Cryptochecksum:3e95257648b6a4c0822eb764c7a453e8
+      : end
+    image_definition: asav-9-15-1
+    tags: []
+    interfaces:
+      - id: i0
+        slot: 0
+        label: Management0/0
+        type: physical
+      - id: i1
+        slot: 1
+        label: GigabitEthernet0/0
+        type: physical
+      - id: i2
+        slot: 2
+        label: GigabitEthernet0/1
+        type: physical
+links:
+  - id: l1
+    i1: i2
+    n1: n1
+    i2: i1
+    n2: n3
+  - id: l3
+    i1: i0
+    n1: n2
+    i2: i0
+    n2: n5
+  - id: l2
+    i1: i0
+    n1: n4
+    i2: i2
+    n2: n5
+  - id: l6
+    i1: i3
+    n1: n1
+    i2: i2
+    n2: n6
+  - id: l0
+    i1: i3
+    n1: n6
+    i2: i3
+    n2: n3
+  - id: l7
+    i1: i1
+    n1: n5
+    i2: i1
+    n2: n1
+  - id: l8
+    i1: i3
+    n1: n5
+    i2: i2
+    n2: n3
+  - id: l9
+    i1: i4
+    n1: n5
+    i2: i1
+    n2: n6
+  - id: l11
+    i1: i6
+    n1: n5
+    i2: i1
+    n2: n7
+  - id: l4
+    i1: i4
+    n1: n6
+    i2: i1
+    n2: n0
+  - id: l5
+    i1: i0
+    n1: n0
+    i2: i5
+    n2: n5
+  - id: l10
+    i1: i2
+    n1: n0
+    i2: i2
+    n2: n7

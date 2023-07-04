@@ -1,0 +1,12 @@
+- name: Configure ospfv2 parameters
+  hosts: asa
+  gather_facts: no
+
+  tasks:
+
+  - name: configure ospfv2
+    cisco.asa.asa_config:
+      lines:
+      - network 192.168.3.0 255.255.255.0 area 0
+      - network 192.168.4.0 255.255.255.0 area 0
+      parents: [router ospf 1]

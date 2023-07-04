@@ -1,0 +1,67 @@
+devices:
+    router1:
+        type: 'iosxe'
+        os: 'iosxe'
+        platform: csr1000v
+        alias: 'router1'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "192.168.255.230"
+    router2:
+        type: 'iosxe'
+        os: 'iosxe'
+        platform: csr1000v
+        alias: 'router2'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "192.168.255.217"
+    switch1:
+        type: 'nxos'
+        os: 'nxos'
+        platform: n9k
+        alias: 'switch1'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "192.168.255.175"
+    switch2:
+        type: 'nxos'
+        os: 'nxos'
+        platform: n9k
+        alias: 'switch2'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            cli:
+                protocol: ssh
+                ip: "192.168.255.110"
+    asa:
+        type: 'asa'
+        os: 'asa'
+        platform: asav
+        alias: 'asa'
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: 'unicon.Unicon'
+            a:  
+                command : "ssh -l cisco 192.168.255.45 -oHostKeyAlgorithms=+ssh-rsa"

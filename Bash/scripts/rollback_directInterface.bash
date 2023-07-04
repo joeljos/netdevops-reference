@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+ansible-playbook Ansible/directInterface/rollback_router1_directInterface.yaml
+ansible-playbook Ansible/directInterface/rollback_router2_directInterface.yaml
+ansible-playbook Ansible/directInterface/rollback_switch1_directInterface.yaml
+ansible-playbook Ansible/directInterface/rollback_asa_directInterface.yaml
+ansible-playbook Ansible/directInterface/rollback_switch2_directInterface.yaml

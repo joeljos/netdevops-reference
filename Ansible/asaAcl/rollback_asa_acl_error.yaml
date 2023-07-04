@@ -1,0 +1,15 @@
+- name: Configure acl parameters
+  hosts: asa
+  gather_facts: no
+
+  tasks:
+
+  - name: configure acl
+    cisco.asa.asa_config:
+      lines:
+      - no access-list default line 1 extended deny ip any any
+    register: result
+
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: result

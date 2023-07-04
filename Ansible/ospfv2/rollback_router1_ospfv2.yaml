@@ -1,0 +1,17 @@
+- name: rollback - Override provided OSPF V2 configuration
+  hosts: router1
+  
+  tasks:
+  - name: rollback - configure ospf in router1
+    cisco.ios.ios_ospfv2:
+      config:
+        processes:
+        - process_id: 1
+          network:
+            - address: 192.168.0.0
+              wildcard_bits: 0.0.0.255
+              area: '0'
+            - address: 192.168.1.0
+              wildcard_bits: 0.0.0.255
+              area: '0'
+      state: deleted

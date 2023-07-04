@@ -1,0 +1,12 @@
+- name: rollback - Configure ospfv2 parameters
+  hosts: asa
+  gather_facts: no
+
+  tasks:
+
+  - name: rollback - configure ospfv2
+    cisco.asa.asa_config:
+      lines:
+      - no network 192.168.3.0 255.255.255.0 area 0
+      - no network 192.168.4.0 255.255.255.0 area 0
+      parents: [router ospf 1]

@@ -1,0 +1,23 @@
+- name: rollback - Configure direct interface parameters in asa
+  hosts: asa
+  gather_facts: no
+
+  tasks:
+
+  - name: rollback - configure Interface GigabitEthernet0/0 in asa
+    cisco.asa.asa_config:
+      lines:
+      - no ip address 192.168.3.1 255.255.255.0
+      - no nameif outside
+      - no security-level 0
+      - shutdown
+      parents: [interface GigabitEthernet0/0]
+
+  - name: rollback - configure Interface GigabitEthernet0/1 in asa
+    cisco.asa.asa_config:
+      lines:
+      - no ip address 192.168.4.1 255.255.255.0
+      - no nameif inside
+      - no security-level 100
+      - shutdown
+      parents: [interface GigabitEthernet0/1]

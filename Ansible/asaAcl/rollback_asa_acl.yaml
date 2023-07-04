@@ -1,0 +1,25 @@
+- name: Configure acl parameters
+  hosts: asa
+  gather_facts: no
+
+  tasks:
+
+  - name: configure acl
+    cisco.asa.asa_config:
+      lines:
+      - no access-list default extended permit ip 192.168.4.0 255.255.255.0 192.168.0.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.0.0 255.255.255.0 192.168.4.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.4.0 255.255.255.0 192.168.1.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.1.0 255.255.255.0 192.168.4.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.4.0 255.255.255.0 192.168.2.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.2.0 255.255.255.0 192.168.4.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.3.0 255.255.255.0 192.168.4.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.4.0 255.255.255.0 192.168.3.0 255.255.255.0
+      - no access-list default extended permit ip 192.168.1.0 255.255.255.0 192.168.3.0 255.255.255.0 
+      - no access-list default extended permit ip 192.168.3.0 255.255.255.0 192.168.1.0 255.255.255.0 
+      - no access-group default global
+    register: result
+
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: result

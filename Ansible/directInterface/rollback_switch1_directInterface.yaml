@@ -1,0 +1,51 @@
+- name: rollback - Configure direct interface parameters in switch1
+  hosts: switch1
+  tasks:
+
+  - name: rollback - bring interface Ethernet1/1 to admin UP state in switch1
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: Ethernet1/1
+        description: Configured and Replaced by Ansible cisco.nxos.nxos_interfaces
+        enabled: yes
+      state: deleted
+
+  - name: rollback - configure the ipv4 address of Ethernet1/1 in switch1
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+      - name: Ethernet1/1
+        ipv4:
+        - address: 192.168.1.2/24
+      state: deleted
+
+  - name: rollback - bring interface Ethernet1/2 to admin UP state in switch1
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: Ethernet1/2
+        description: Configured and Replaced by Ansible cisco.nxos.nxos_interfaces
+        enabled: yes
+      state: deleted
+
+  - name: rollback - configure the ipv4 address of Ethernet1/2 in switch1
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+      - name: Ethernet1/2
+        ipv4:
+        - address: 192.168.2.2/24
+      state: deleted
+
+  - name: rollback - bring interface Ethernet1/3 to admin UP state in switch1
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: Ethernet1/3
+        description: Configured and Replaced by Ansible cisco.nxos.nxos_interfaces
+        enabled: yes
+      state: deleted
+
+  - name: rollback - configure the ipv4 address of Ethernet1/3 in switch1
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+      - name: Ethernet1/3
+        ipv4:
+        - address: 192.168.3.2/24
+      state: deleted
